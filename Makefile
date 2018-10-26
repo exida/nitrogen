@@ -354,4 +354,13 @@ rel_copy_quickstart:
 rellink:  
 	$(foreach app,$(wildcard deps/*), rm -rf rel/nitrogen/lib/$(shell basename $(app))* && ln -sf $(abspath $(app)) rel/nitrogen/lib;)
 
+#ctools: PROJECT=ctools_clean 
+ctools: slim_cowboy ctools_finalize
+ctools_finalize:
+	rm -r "$(PREFIX)/$(PROJECT)/site"
+	cp -r ./ctools/site "$(PREFIX)/$(PROJECT)"
+	cp -r ./ctools/data "$(PREFIX)/$(PROJECT)"
+	patch "$(PREFIX)/$(PROJECT)/etc/vm.args" ./ctools/mnesia.patch 
+	$(MAKE) -C "$(PREFIX)/$(PROJECT)"
+
 

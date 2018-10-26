@@ -14,6 +14,10 @@ ctools framework will be launched at the port 8000.
 
 To log in and view the data, use password exidademo.
 
+# TODO
+* Provide a description of required tools to be installed.
+* Provide additional installation procedures for scripts wrapping those tools usage
+
 # Nitrogen Web Framework for Erlang
 
 [![Build Status](https://travis-ci.org/nitrogen/nitrogen.png)](https://travis-ci.org/nitrogen/nitrogen)
